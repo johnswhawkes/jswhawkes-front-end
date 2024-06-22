@@ -22,17 +22,17 @@ jobs:
       - name: Upload to Azure Storage
         uses: azure/CLI@v1
         with:
-          azcliversion: '2.0.72'
+          azcliversion: '2.30.0'
           inlineScript: |
             az account set --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-            az storage blob upload-batch -s . -d \$web --account-name jswhawkes
+            az storage blob upload-batch --account-name jswhawkes -d \$web -s . 
 
       - name: Purge Azure CDN (Optional)
         uses: azure/CLI@v1
         with:
-          azcliversion: '2.0.72'
+          azcliversion: '2.30.0'
           inlineScript: |
-            az cdn endpoint purge -g jswhawkes -n jswhawkes --profile-name jswhawkesCDN --content-paths '/*'
+            az cdn endpoint purge --content-paths  "/*" --profile-name "jswhawkesCDN" --name "jswhawkes" --resource-group "jswhawkes"
 
       - name: Logout from Azure
         run: az logout
