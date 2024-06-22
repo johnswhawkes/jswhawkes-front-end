@@ -28,4 +28,4 @@ jobs:
 
     - name: Purge Azure CDN
       run: |
-        az cdn endpoint purge -g <resource-group> -n <cdn-endpoint-name> --profile-name <cdn-profile-name> --content-paths '/*'
+        az cdn endpoint purge -g jswhawkes -n jswhawkes --profile-name jswhawkesCDN --content-paths '/*'
