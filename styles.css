@@ -58,12 +58,14 @@ header p a:hover {
     background-color: transparent;
     border: none;
     color: #ffffff;
-    font-size: 1em;
+    font-size: 2em;
     cursor: pointer;
 }
 
 #sidebar-toggle:hover {
     color: #ffd700; /* Change color on hover */
+
+
 }
 
 .container {
