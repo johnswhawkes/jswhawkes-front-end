@@ -143,6 +143,13 @@ h2 {
 h3 {
     font-size: 1.5em;
     margin: 10px 0;
+    text-align: left;
+    color: #6a5acd;
+}
+
+h4 {
+    margin: 10px 0;
+    text-align: left;
     color: #6a5acd;
 }
 
