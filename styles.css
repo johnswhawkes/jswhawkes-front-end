@@ -1,4 +1,9 @@
 /* General styles */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     background-image: url('background-image.jpg'); /* Replace with your background image */
@@ -19,6 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .header-center {
@@ -184,6 +190,7 @@ footer {
     color: #ffffff;
     background: linear-gradient(45deg, #9370db, #8a2be2, #6a5acd, #4b0082);
     text-align: center;
+    width: 100%;
 }
 
 footer a {
@@ -241,10 +248,10 @@ footer a:hover {
     }
 
     section {
-        width: 80%; 
+        width: 100%; 
         justify-content: center;
-        margin: 10px auto;
-        padding: 10px;
+        margin: 5px auto;
+        padding: 5px;
 
         text-align: left; /* Left-align text within sections */
     }
