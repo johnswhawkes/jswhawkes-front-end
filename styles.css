@@ -213,7 +213,6 @@ footer a:hover {
     .sidebar {
         position: static;
         width: 100%;
-        margin-top: 20px; /* Space between main content and sidebar on smaller screens */
         box-shadow: none;
         background-color: rgba(0, 0, 0, 0.8);
         transition: none; /* No transition for static positioning */
@@ -241,7 +240,7 @@ footer a:hover {
     }
 
     main {
-        width: 80%; /* Ensure main takes full width */
+        width: 98%; /* Ensure main takes full width */
         padding: 10px;
         justify-content: center;
         margin: 0 auto; /* Center main */
