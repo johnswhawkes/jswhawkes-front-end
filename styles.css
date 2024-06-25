@@ -234,7 +234,7 @@ footer a:hover {
     }
 
     main {
-        width: 100%; /* Ensure main takes full width */
+        width: 80%; /* Ensure main takes full width */
 
         justify-content: center;
         margin: 0 auto; /* Center main */
@@ -243,7 +243,6 @@ footer a:hover {
     section {
         width: 80%; 
         justify-content: center;
-        max-width: 100%; /* Ensure sections take full width */
         text-align: left; /* Left-align text within sections */
     }
 
