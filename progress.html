@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Progress - John S W Hawkes</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <button id="sidebar-toggle">&#9776;</button> <!-- &#9776; is the HTML entity for the burger icon -->
+    <div class="header-center">
+        <h1>John S W Hawkes</h1>
+    </div>
+    <div class="header-right">
+        <p>Experienced IT Professional</p>
+        <p><a href="mailto:johnswhawkes@gmail.com">johnswhawkes@gmail.com</a></p>
+    </div>
+</header>
+
+
+    <div class="container">
+        <main>
+            <section>
+                <h2>Site Progress</h2>
+
+
+    
+    <article>
+    <h3>Part 1:Create a Professional Resume Website with ChatGPT's Assistance</h3>
+    <ul>
+        <li><strong>Initial Setup:</strong>
+            <ul>
+                <li>Provided an overview of my background and skills for the resume website.</li>
+            </ul>
+        </li>
+        <li><strong>HTML Structure:</strong>
+            <ul>
+                <li>Created the basic HTML structure for the resume website, including sections for the header, sidebar, main content, and footer.</li>
+            </ul>
+        </li>
+        <li><strong>Header Customization:</strong>
+            <ul>
+                <li>Adjusted the header layout to include a menu button on the left and my name, title, and email on the right.</li>
+                <li>Centered the "John S W Hawkes" title within the header.</li>
+            </ul>
+        </li>
+        <li><strong>CSS Styling:</strong>
+            <ul>
+                <li>Applied general styling for the body, header, sidebar, main content, and footer.</li>
+                <li>Customized colors, fonts, and layout using CSS.</li>
+                <li>Ensured the header and footer have a similar style with gradient backgrounds.</li>
+            </ul>
+        </li>
+        <li><strong>Flexbox Adjustments:</strong>
+            <ul>
+                <li>Used Flexbox to align elements within the header and position them appropriately.</li>
+                <li>Centered the main title in the header and aligned other elements to the right and left as needed.</li>
+            </ul>
+        </li>
+        <li><strong>Content Addition:</strong>
+            <ul>
+                <li>Added sections for about me, experience, certifications, and skills.</li>
+                <li>Included details for each section based on your professional background.</li>
+            </ul>
+        </li>
+        <li><strong>Responsive Design:</strong>
+            <ul>
+                <li>Implemented media queries for responsive design, ensuring the website looks good on various screen sizes.</li>
+            </ul>
+        </li>
+        <li><strong>Final Touches:</strong>
+            <ul>
+                <li>Fixed any CSS issues and ensured the final layout matched your requirements.</li>
+            </ul>
+        </li>
+    </ul>
+</article>
+
+<article>
+    <h3>Part 2: Deploy a Website Using Azure Services</h3>
+    <ul>
+        <li><strong>Created a Storage Account:</strong>
+            <ul>
+                <li>Created a new Storage Account in Azure portal.</li>
+                <li>Configured it for "Blob storage" and selected "Hot" as the performance tier.</li>
+            </ul>
+        </li>
+        <li><strong>Enabled Static Website Hosting:</strong>
+            <ul>
+                <li>Enabled static website hosting in the Storage Account settings.</li>
+                <li>Obtained the Primary endpoint URL for accessing the website.</li>
+            </ul>
+        </li>
+        <li><strong>Uploaded Website Files:</strong>
+            <ul>
+                <li>Uploaded website files (HTML, CSS, JavaScript, etc.) to the `$web` container within the Storage Account using Azure Storage Explorer or Azure portal.</li>
+            </ul>
+        </li>
+        <li><strong>Configured Azure Front Door:</strong>
+            <ul>
+                <li>Created an Azure Front Door instance in Azure portal.</li>
+                <li>Added a frontend host (`www.jswhawkes.co.uk`) for the custom domain.</li>
+                <li>Created a backend pool with the Storage Account's Primary endpoint URL.</li>
+                <li>Configured routing rules to direct traffic from the custom domain to the backend pool.</li>
+            </ul>
+        </li>
+        <li><strong>Configured HTTPS with Azure Front Door:</strong>
+            <ul>
+                <li>Enabled HTTPS for the custom domain using Azure-managed certificates.</li>
+                <li>Selected the minimum TLS version required (e.g., TLS 1.2).</li>
+            </ul>
+        </li>
+        <li><strong>Validated Domain Ownership:</strong>
+            <ul>
+                <li>Completed DNS verification as prompted by Azure Front Door for `www.jswhawkes.co.uk`.</li>
+                <li>Waited for domain validation status to change from pending to verified.</li>
+            </ul>
+        </li>
+        <li><strong>Tested and Verified:</strong>
+            <ul>
+                <li>Tested access to the website using `https://www.jswhawkes.co.uk` to ensure proper functionality and secure HTTPS connection.</li>
+            </ul>
+        </li>
+    </ul>
+</article>
+
+<article>
+    <h3>Part 3: Exploring Azure Front Door Costs and Moving to Azure CDN</h3>
+    <ul>
+        <li><strong>Reviewed Azure Front Door costs using Azure Cost Management:</strong> Took a close look at what it was costing to use Azure Front Door.</li>
+        <li><strong>Checked billing details and cost trends:</strong> Examined the fine print on bills and how costs were changing over time.</li>
+        <li><strong>Considered Azure CDN as a cheaper option for delivering content:</strong> Looked into Azure CDN to see if it could save some money</li>
+        <li><strong>Set up a new Azure CDN profile:</strong> Started a new Azure CDN profile to prepare for the switch.</li>
+        <li><strong>Connected CDN endpoints to Azure Storage:</strong> Replaced the azure front door with the new Azure CDN by linking the CDN endpoint with Azure Storage.</li>
+        <li><strong>Adjusted caching rules to make content delivery more efficient:</strong> Fine-tuned caching settings to speed up how content got to users and make the server work less.</li>
+        <li><strong>Watched spending after moving to Azure CDN:</strong> Used Azure Cost Management to keep an eye on how much was being spent once the switch was made.</li>
+        <li><strong>Compared costs before and after switching:</strong> Now I am spending sufficiently less.</li>
+    </ul>
+</article>
+
+<article>
+    <h3>Part 4: Setting Up CI/CD using GitHub Actions for jswhawkes.co.uk</h3>
+
+    
+    <ul>
+        <li><strong>Created Github Repo:</strong> Creaated a Github Repo for jswhawkes-frontend</li>
+        <li><strong>Created a service principal:</strong> Generated a service principal with the necessary permissions for Azure resource management.</li>
+        <li><strong>Assigned CDN Endpoint Contributor role:</strong> Allocated the CDN Endpoint Contributor role to the service principal to enable management of Azure CDN endpoints.</li>
+        <li><strong>Added Azure credentials to GitHub Secrets:</strong> Safely stored Azure credentials within GitHub Secrets for secure access during the CI/CD workflow.</li>
+        <li><strong>Established .github/workflows directory:</strong> Created a dedicated directory (`/.github/workflows`) within the GitHub repository for housing GitHub Actions workflows.</li>
+        <li><strong>Created deploy.yml:</strong> Developed a YAML file (`deploy.yml`) within the workflows directory to define the GitHub Actions workflow for deployment.</li>
+        <li><strong>Configured GitHub Actions workflow:</strong> Detailed configuration included:</li>
+        <ul>
+            <li>Cleared the runner temp directory.</li>
+            <li>Checked out the latest code from the repository.</li>
+            <li>Set up Azure CLI environment.</li>
+            <li>Logged in to Azure using the service principal credentials.</li>
+            <li>Uploaded updated website files to Azure Storage.</li>
+            <li>Purged the Azure CDN endpoint to ensure content freshness.</li>
+        </ul>
+        <li><strong>Adjusted permissions and roles:</strong> Made necessary adjustments to permissions and roles to resolve any authorization issues encountered during setup.</li>
+    </ul>
+    
+</article>
+
+
+
+
+
+            </section>
+        
+    
+
+    <aside class="sidebar">
+        <div class="sidebar-container">
+            <h3>Site Links</h3>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./progress.html">Progress</a></li>
+
+            </ul>
+
+            <h3>External Links</h3>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/john-hawkes-62b68b205" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/johnswhawkes" target="_blank">GitHub</a></li>
+                <li><a href="https://tryhackme.com/p/cyberwarrior1337" target="_blank">TryHackMe</a></li>
+                <li><a href="https://www.credly.com/users/john-hawkes.10aa8938" target="_blank">Credly</a></li>
+                <li><a href="https://learn.microsoft.com/en-gb/users/johnhawkes-3398/" target="_blank">Microsoft Learn</a></li>
+            </ul>
+        </div>
+    </aside>
+    </main>
+  </div>
+
+    <footer>
+        <p>&copy; 2025 John S W Hawkes. All Rights Reserved.</p>
+        <p><a href="https://www.freepik.com/free-vector/lines-vector-seamless-pattern-banner-geometric-striped-ornament-monochrome-linear-background-illustration_34352528.htm#query=repeating%20background&position=0&from_view=keyword&track=ais_user&uuid=12b6acff-07d7-4e32-a66a-c8eaadeafa13">Image by flatart on Freepik</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

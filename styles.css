@@ -66,7 +66,7 @@ header p a:hover {
     color: #ffffff;
     font-size: 2em;
     cursor: pointer;
-    
+}
 }
 
 #sidebar-toggle:hover {
@@ -128,17 +128,19 @@ main {
     width: 80%;
     padding: 20px;
     margin-top: 20px; /* Space between main content and header */
+    min-height: 100vh; 
 }
 
 section {
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #9370db;
-    width: 100%; /* Full width for sections */
+    width: 100%;
     max-width: 800px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px #9370db;
+
 }
 
 h2 {
