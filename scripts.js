@@ -15,4 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebar.classList.remove('active');
         }
     });
+
+    // Function to update visit count
+    async function updateVisitCount() {
+        try {
+            // Replace with your Azure Function URL
+            const response = await fetch('https://<YOUR_FUNCTION_APP_NAME>.azurewebsites.net/api/<YOUR_FUNCTION_NAME>', {
+                method: 'POST' // Use GET if your function is set up to handle GET requests
+            });
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.text();
+            document.getElementById('visitCount').innerText = result;
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    }
+
+    // Call the visit counter function when the page loads
+    updateVisitCount();
 });
+
