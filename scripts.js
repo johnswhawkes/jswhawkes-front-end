@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function updateVisitCount() {
         try {
             // Replace with your Azure Function URL
-            const response = await fetch('https://jswhawkes-function.azurewebsites.net/api/code', {
+            const response = await fetch('https://jswhawkes-function.azurewebsites.net/api/code?code=gYxaZM32PqzSW9zKjUNdgNKBneazwk7P6lemztkQ7ovLAzFu34ZdGA%3D%3D', {
                 method: 'POST' // Use GET if your function is set up to handle GET requests
             });
             
