@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
 
+    // Sidebar toggle functionality
     sidebarToggle.addEventListener('click', () => {
         sidebar.classList.toggle('active');
     });
@@ -16,24 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Function to update visit count
-// Example using JavaScript fetch API
-async function getVisitorCount() {
-    try {
-        const response = await fetch('https://jswhawkes-counter-func.azurewebsites.net/api/code', {
-            method: 'GET',
-        });
-        const data = await response.text();
-        document.getElementById("visitorCount").innerText = data; // Display visitor count in an element
-    } catch (error) {
-        console.error('Error fetching visitor count:', error);
-    }
-}
+    // Visit counter functionality
+    const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code?'; 
 
-// Call the function to get and display the visitor count
-getVisitorCount();
+    const getVisitCount = async () => {
+        try {
+            const response = await fetch(functionApi);
+            const data = await response.json();
+            console.log("Webpage called function API.");
+            const count = data.count || 0; // Default to 0 if count is undefined
+            document.getElementById("counter").innerText = count;
+        } catch (error) {
+            console.error("Error fetching visit count:", error);
+            document.getElementById("counter").innerText = "0"; // Default display
+        }
+    };
 
-    // Call the visit counter function when the page loads
-    updateVisitCount();
+    getVisitCount();
 });
-
