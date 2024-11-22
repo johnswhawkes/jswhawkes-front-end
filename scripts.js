@@ -18,20 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Visit counter functionality
-    const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code?'; 
+    const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code'; // Removed unnecessary "?"
 
     const getVisitCount = async () => {
         try {
+            // Fetching the visit count from the API
             const response = await fetch(functionApi);
             const data = await response.json();
-            console.log("Webpage called function API.");
+
+            console.log("API Response:", data); // Log API response for debugging
+
+            // Update the counter in the HTML
             const count = data.count || 0; // Default to 0 if count is undefined
-            document.getElementById("counter").innerText = count;
+            const counterElement = document.getElementById("counter");
+
+            if (counterElement) {
+                counterElement.innerText = count;
+                console.log("Visit count updated on the page:", count);
+            } else {
+                console.error("Counter element not found on the page.");
+            }
         } catch (error) {
             console.error("Error fetching visit count:", error);
-            document.getElementById("counter").innerText = "0"; // Default display
+
+            // Fallback to default display
+            const counterElement = document.getElementById("counter");
+            if (counterElement) {
+                counterElement.innerText = "0"; // Default value in case of error
+            }
         }
     };
 
+    // Call the function to update the visit count
     getVisitCount();
 });
