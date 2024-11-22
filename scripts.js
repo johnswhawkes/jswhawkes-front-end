@@ -17,23 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Function to update visit count
-    async function updateVisitCount() {
-        try {
-            // Replace with your Azure Function URL
-            const response = await fetch('https://jswhawkes-function.azurewebsites.net/api/code?code=1wCyT6A2PvRKtc-1BI9VDnzHLz6gSGbpc1LNaosTKznVAzFuq_qFVA%3D%3D', {
-                method: 'POST' // Use GET if your function is set up to handle GET requests
-            });
-            
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const result = await response.text();
-            document.getElementById('visitCount').innerText = result;
-        } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
-        }
+// Example using JavaScript fetch API
+async function getVisitorCount() {
+    try {
+        const response = await fetch('https://jswhawkes-counter-func.azurewebsites.net/api/code', {
+            method: 'GET',
+        });
+        const data = await response.text();
+        document.getElementById("visitorCount").innerText = data; // Display visitor count in an element
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
     }
+}
+
+// Call the function to get and display the visitor count
+getVisitorCount();
 
     // Call the visit counter function when the page loads
     updateVisitCount();

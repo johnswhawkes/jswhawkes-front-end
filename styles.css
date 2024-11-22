@@ -324,3 +324,8 @@ footer a:hover {
     transform: translateX(-50%);
     width: 80%; /* Adjust width as needed */
 }
+
+#visitorCount {
+    font-weight: bold;
+    color: #0078d4; /* Example color */
+}
