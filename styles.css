@@ -67,7 +67,6 @@ header p a:hover {
     font-size: 2em;
     cursor: pointer;
 }
-}
 
 #sidebar-toggle:hover {
     color: #ffd700; /* Change color on hover */

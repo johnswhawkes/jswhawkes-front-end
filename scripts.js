@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("API Response:", data); // Log API response for debugging
 
             // Update the counter in the HTML
-            const count = data.count || 0; // Default to 0 if count is undefined
+            const count = data.count || 7; // Default to 0 if count is undefined
             const counterElement = document.getElementById("counter");
 
             if (counterElement) {
