@@ -1,4 +1,3 @@
-// JavaScript for sidebar toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
     console.log('John S W Hawkes Resume Website Loaded');
 
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.toggle('active');
     });
 
-    // Hide sidebar on click outside (optional)
     document.addEventListener('click', (e) => {
         if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
             sidebar.classList.remove('active');
@@ -18,37 +16,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Visit counter functionality
-    const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code'; // Removed unnecessary "?"
+    const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code';
 
     const getVisitCount = async () => {
         try {
-            // Fetching the visit count from the API
             const response = await fetch(functionApi);
             const data = await response.json();
 
-            console.log("API Response:", data); // Log API response for debugging
+            console.log("API Response:", data);
 
-            // Update the counter in the HTML
-            const count = data.count || 7; // Default to 0 if count is undefined
-            const counterElement = document.getElementById("counter");
-
-            if (counterElement) {
-                counterElement.innerText = count;
-                console.log("Visit count updated on the page:", count);
+            // Update the daily count
+            const dailyCount = data.dailyCount || 0;
+            const dailyCounterElement = document.getElementById("daily-counter");
+            if (dailyCounterElement) {
+                dailyCounterElement.innerText = dailyCount;
             } else {
-                console.error("Counter element not found on the page.");
+                console.error("Daily counter element not found on the page.");
+            }
+
+            // Update the total count
+            const totalCount = data.totalCount || 0;
+            const totalCounterElement = document.getElementById("total-counter");
+            if (totalCounterElement) {
+                totalCounterElement.innerText = totalCount;
+            } else {
+                console.error("Total counter element not found on the page.");
             }
         } catch (error) {
             console.error("Error fetching visit count:", error);
-
-            // Fallback to default display
-            const counterElement = document.getElementById("counter");
-            if (counterElement) {
-                counterElement.innerText = "0"; // Default value in case of error
-            }
         }
     };
 
-    // Call the function to update the visit count
     getVisitCount();
 });
