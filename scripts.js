@@ -18,32 +18,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Visit counter functionality
     const functionApi = 'https://jswhawkes-counter-func.azurewebsites.net/api/code';
 
+    const updateCounter = (elementId, value) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.innerText = value;
+        } else {
+            console.error(`Element with ID "${elementId}" not found.`);
+        }
+    };
+
     const getVisitCount = async () => {
         try {
             const response = await fetch(functionApi);
-            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
 
+            const data = await response.json();
             console.log("API Response:", data);
 
-            // Update the daily count
-            const dailyCount = data.dailyCount || 0;
-            const dailyCounterElement = document.getElementById("daily-counter");
-            if (dailyCounterElement) {
-                dailyCounterElement.innerText = dailyCount;
-            } else {
-                console.error("Daily counter element not found on the page.");
-            }
-
-            // Update the total count
-            const totalCount = data.totalCount || 0;
-            const totalCounterElement = document.getElementById("total-counter");
-            if (totalCounterElement) {
-                totalCounterElement.innerText = totalCount;
-            } else {
-                console.error("Total counter element not found on the page.");
-            }
+            // Update the daily and total counts
+            updateCounter("daily-counter", data.dailyCount || 0);
+            updateCounter("total-counter", data.totalCount || 0);
         } catch (error) {
             console.error("Error fetching visit count:", error);
+
+            // Optional: Display fallback values on error
+            updateCounter("daily-counter", "Error");
+            updateCounter("total-counter", "Error");
         }
     };
 
